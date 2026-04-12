@@ -1,0 +1,17 @@
+[*]
+[dumpfile] "dump.vcd"
+[timestart] 0
+[timeend] 2000
+[size] 1200 600
+[signals] 
+[signal] name=tb.dut.clk, radix=binary
+[signal] name=tb.dut.rst, radix=binary
+[signal] name=tb.dut.PCD, radix=hex
+[signal] name=tb.dut.InstrD, radix=hex
+[signal] name=tb.dut.PCE, radix=hex
+[signal] name=tb.dut.ALU_ResultM, radix=hex
+[signal] name=tb.dut.ResultW, radix=hex
+[signal] name=tb.dut.RegWriteW, radix=binary
+[signal] name=tb.dut.ForwardAE, radix=binary
+[signal] name=tb.dut.ForwardBE, radix=binary
+[signal] name=tb.dut.PCSrcE, radix=binary

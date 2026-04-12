@@ -1,0 +1,2 @@
+cd C:\RISC_V_Project
+C:\iverilog\gtkwave\bin\gtkwave.exe dump.vcd
