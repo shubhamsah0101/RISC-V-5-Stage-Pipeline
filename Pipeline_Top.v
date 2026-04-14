@@ -16,8 +16,10 @@
 `include "Data_Memory.v"
 `include "Hazard_unit.v"
 
-module Pipeline_top(clk, rst);
-    input clk, rst;
+module Pipeline_top(
+    input wire clk,
+    input wire rst 
+);
     
     wire PCSrcE, RegWriteW, RegWriteE, ALUSrcE, MemWriteE, ResultSrcE, BranchE, RegWriteM, MemWriteM, ResultSrcM, ResultSrcW;
     wire [2:0] ALUControlE;

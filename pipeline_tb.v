@@ -8,20 +8,23 @@ module pipeline_tb();
     always #50 clk = ~clk;
     
     initial begin
-        // Active-HIGH reset (matches your modules: rst=0 = reset)
-        rst = 1'b0;      // Start in reset
-        
-        #100;            // Hold reset for 100ns
-        rst = 1'b1;      // Release reset (processor starts)
-        
+        rst = 1'b0;
+        $display("Time=%0t: Reset ASSERTED (rst=0)", $time);
+        #100;
+        rst = 1'b1;
+        $display("Time=%0t: Reset RELEASED (rst=1) - Processor starting", $time);
         #2000;
+        $display("Time=%0t: Simulation finished", $time);
         $finish;
     end
     
     initial begin
         $dumpfile("dump.vcd");
         $dumpvars(0, pipeline_tb);
-        $display("Simulation started - Active HIGH reset (rst=0=reset, rst=1=run)");
+    end
+    
+    initial begin
+        $monitor("Time=%0t: rst=%b, PCD=%h", $time, rst, dut.PCD);
     end
     
     Pipeline_top dut (.clk(clk), .rst(rst));
